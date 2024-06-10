@@ -1,0 +1,114 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.gym_app"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="34" />
+9-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:2:5-66
+11-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:2:22-64
+12    <!--
+13         Required to query activities that can process text, see:
+14         https://developer.android.com/training/package-visibility and
+15         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+16
+17         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
+18    -->
+19    <queries>
+19-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:40:5-45:15
+20        <intent>
+20-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:41:9-44:18
+21            <action android:name="android.intent.action.PROCESS_TEXT" />
+21-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:42:13-72
+21-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:42:21-70
+22
+23            <data android:mimeType="text/plain" />
+23-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:43:13-50
+23-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:43:19-48
+24        </intent>
+25    </queries>
+26    <!-- Add this -->
+27    <application
+28        android:name="android.app.Application"
+28-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:5:9-42
+29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+29-->[androidx.core:core:1.6.0] /home/diegogl/.gradle/caches/transforms-3/284a410c767ad6c7a2b0ffc8d8d85981/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+30        android:icon="@mipmap/ic_launcher"
+30-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:6:9-43
+31        android:label="gym_app" >
+31-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:4:9-32
+32        <activity
+32-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:7:9-28:20
+33            android:name="com.example.gym_app.MainActivity"
+33-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:8:13-41
+34            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+34-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:13:13-163
+35            android:exported="true"
+35-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:9:13-36
+36            android:hardwareAccelerated="true"
+36-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:14:13-47
+37            android:launchMode="singleTop"
+37-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:10:13-43
+38            android:taskAffinity=""
+38-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:11:13-36
+39            android:theme="@style/LaunchTheme"
+39-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:12:13-47
+40            android:windowSoftInputMode="adjustResize" >
+40-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:15:13-55
+41
+42            <!--
+43                 Specifies an Android theme to apply to this Activity as soon as
+44                 the Android process has started. This theme is visible to the user
+45                 while the Flutter UI initializes. After that, this theme continues
+46                 to determine the Window background behind the Flutter UI.
+47            -->
+48            <meta-data
+48-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:20:13-23:17
+49                android:name="io.flutter.embedding.android.NormalTheme"
+49-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:21:15-70
+50                android:resource="@style/NormalTheme" />
+50-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:22:15-52
+51
+52            <intent-filter>
+52-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:24:13-27:29
+53                <action android:name="android.intent.action.MAIN" />
+53-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:25:17-68
+53-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:25:25-66
+54
+55                <category android:name="android.intent.category.LAUNCHER" />
+55-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:26:17-76
+55-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:26:27-74
+56            </intent-filter>
+57        </activity>
+58        <!--
+59             Don't delete the meta-data below.
+60             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+61        -->
+62        <meta-data
+62-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:31:9-33:33
+63            android:name="flutterEmbedding"
+63-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:32:13-44
+64            android:value="2" />
+64-->/home/diegogl/Documentos/Repos/android/app/src/main/AndroidManifest.xml:33:13-30
+65
+66        <uses-library
+66-->[androidx.window:window:1.0.0-beta04] /home/diegogl/.gradle/caches/transforms-3/f302e75fb7efd781bcf1a29281c188da/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+67            android:name="androidx.window.extensions"
+67-->[androidx.window:window:1.0.0-beta04] /home/diegogl/.gradle/caches/transforms-3/f302e75fb7efd781bcf1a29281c188da/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+68            android:required="false" />
+68-->[androidx.window:window:1.0.0-beta04] /home/diegogl/.gradle/caches/transforms-3/f302e75fb7efd781bcf1a29281c188da/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+69        <uses-library
+69-->[androidx.window:window:1.0.0-beta04] /home/diegogl/.gradle/caches/transforms-3/f302e75fb7efd781bcf1a29281c188da/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+70            android:name="androidx.window.sidecar"
+70-->[androidx.window:window:1.0.0-beta04] /home/diegogl/.gradle/caches/transforms-3/f302e75fb7efd781bcf1a29281c188da/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+71            android:required="false" />
+71-->[androidx.window:window:1.0.0-beta04] /home/diegogl/.gradle/caches/transforms-3/f302e75fb7efd781bcf1a29281c188da/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+72    </application>
+73
+74</manifest>
