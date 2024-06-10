@@ -7,18 +7,18 @@ import 'package:gym_app/Widgets/style_container.dart';
 import 'package:gym_app/Widgets/style_googlefonts.dart';
 import 'package:provider/provider.dart';
 
-class ExcerciseList extends StatelessWidget {
+class exerciseList extends StatelessWidget {
   String category;
-  ExcerciseList({Key? key, required this.category}) : super(key: key);
+  exerciseList({Key? key, required this.category}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    ExcerciseData excdata = Provider.of<ExcerciseData>(context, listen: false);
+    exerciseData excdata = Provider.of<exerciseData>(context, listen: false);
     return DeffaultScaffold(
         body: FutureBuilder(
       future: excdata
-          .getListExcercise(excdata.traductValue(false, false, category)),
-      builder: (BuildContext context, AsyncSnapshot<List<Excercise>> snapshot) {
+          .getListexercise(excdata.traductValue(false, false, category)),
+      builder: (BuildContext context, AsyncSnapshot<List<Exercise>> snapshot) {
         if (snapshot.hasData) {
           Set<String> uniqueEquipment =
               snapshot.data!.map((e) => e.equipment!).toSet();
@@ -35,7 +35,7 @@ class ExcerciseList extends StatelessWidget {
 }
 
 class _exerciseElements extends StatefulWidget {
-  List<Excercise> data;
+  List<Exercise> data;
   Set<String> uniqueEquipment;
   _exerciseElements(
       {required this.data, required this.uniqueEquipment, super.key});
@@ -48,7 +48,7 @@ class _exerciseElementsState extends State<_exerciseElements> {
   String? value; // Initializing value as an empty string
   @override
   Widget build(BuildContext context) {
-    ExcerciseData excdata = Provider.of<ExcerciseData>(context, listen: false);
+    exerciseData excdata = Provider.of<exerciseData>(context, listen: false);
     return Column(children: [
       Row(
         children: [
@@ -112,7 +112,7 @@ class _exerciseElementsState extends State<_exerciseElements> {
                   (element) =>
                       value == null ? true : element.equipment == value,
                 )
-                .map((e) => _excercise(excercise: e))
+                .map((e) => _exercise(exercise: e))
                 .toList(),
           ),
         ),
@@ -121,16 +121,16 @@ class _exerciseElementsState extends State<_exerciseElements> {
   }
 }
 
-class _excercise extends StatelessWidget {
-  Excercise excercise;
-  _excercise({super.key, required this.excercise});
+class _exercise extends StatelessWidget {
+  Exercise exercise;
+  _exercise({super.key, required this.exercise});
 
   @override
   Widget build(BuildContext context) {
-    ExcerciseData excdata = Provider.of<ExcerciseData>(context, listen: false);
+    exerciseData excdata = Provider.of<exerciseData>(context, listen: false);
     return StyleContainer(
       onPressed: () {
-        Navigator.pushNamed(context,"exercise", arguments: excercise);
+        Navigator.pushNamed(context,"exercise", arguments: exercise);
       },
         padding: EdgeInsets.all(10),
         edgeInsets: EdgeInsets.all(10),
@@ -141,14 +141,14 @@ class _excercise extends StatelessWidget {
               clip: 10,
               child: FadeInImage(
                 placeholder: AssetImage("assets/gif/loading.gif"),
-                image: NetworkImage(excercise.gifUrl!),
+                image: NetworkImage(exercise.gifUrl!),
                 fit: BoxFit.cover,
               ),
             ),
             StyleContainer(
               padding: EdgeInsets.only(top:10,bottom: 5),
               child: StyleGoogleFonts(
-                body: excercise.name!.toUpperCase(),
+                body: exercise.name!.toUpperCase(),
                 white: true,
                 weight: FontWeight.w600,
               ),

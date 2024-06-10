@@ -12,7 +12,7 @@ class Lobby extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ExcerciseData excdata = Provider.of<ExcerciseData>(context, listen: false);
+    exerciseData excdata = Provider.of<exerciseData>(context, listen: false);
     return DeffaultScaffold(
         body: ListView(
       children: excdata.bodyPartsS.keys
@@ -30,10 +30,10 @@ class _Category extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ExcerciseData excdata = Provider.of<ExcerciseData>(context, listen: false);
+    exerciseData excdata = Provider.of<exerciseData>(context, listen: false);
     return StyleContainer(
       onPressed: () {
-        Navigator.pushNamed(context, 'subexercise',arguments:[excdata.targetListS[category],"subexercise",true,"excerciseList"]);
+        Navigator.pushNamed(context, 'subexercise',arguments:[excdata.targetListS[category],"subexercise",true,"exerciseList"]);
       },
       edgeInsets: EdgeInsets.all(20),
       padding: EdgeInsets.all(10),

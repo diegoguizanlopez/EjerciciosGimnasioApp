@@ -5,8 +5,8 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:gym_app/Entities/exercise.dart';
 import 'package:http/http.dart' as http;
 
-class ExcerciseData with ChangeNotifier {
-  List<Excercise> excerciseList = [];
+class exerciseData with ChangeNotifier {
+  List<Exercise> exerciseList = [];
 
   Map<String, List<String>> bodyPartsE = {
     "back": ["back"],
@@ -126,20 +126,20 @@ class ExcerciseData with ChangeNotifier {
   final x_rapid_host = "exercisedb.p.rapidapi.com";
   final x_rapid_key = dotenv.env['X_RAPID_KEY'];
 
-  Future<List<Excercise>> getListExcercise(String target) async {
-    if (excerciseList.isEmpty) {
+  Future<List<Exercise>> getListexercise(String target) async {
+    if (exerciseList.isEmpty) {
       var response = await http.get(Uri.parse(baseURL), headers: {
         "x-rapidapi-host": x_rapid_host,
         "x-rapidapi-key": x_rapid_key!
       });
       try {
-        excerciseList =
-            excerciseFromJson(json.encode(await json.decode(response.body)));
+        exerciseList =
+            exerciseFromJson(json.encode(await json.decode(response.body)));
       } catch (e) {
         print(e);
       }
     }
-    var list = excerciseList
+    var list = exerciseList
         .where(
           (element) => element.target == target,
         )

@@ -1,0 +1,1 @@
+ /home/diegogl/Documentos/Repos/GymExcercise/.dart_tool/flutter_build/7c9c94a6bc54a58beb921bf8a0ef996b/native_assets.yaml: 

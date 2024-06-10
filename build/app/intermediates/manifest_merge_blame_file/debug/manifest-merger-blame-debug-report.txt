@@ -41,7 +41,7 @@
 32-->[androidx.core:core:1.6.0] /home/diegogl/.gradle/caches/transforms-3/284a410c767ad6c7a2b0ffc8d8d85981/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
 33        android:debuggable="true"
 34        android:icon="@mipmap/ic_launcher"
-35        android:label="gym_app" >
+35        android:label="Gym App Diego (:" >
 36        <activity
 37            android:name="com.example.gym_app.MainActivity"
 38            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

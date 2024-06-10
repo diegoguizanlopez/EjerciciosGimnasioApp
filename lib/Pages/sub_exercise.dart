@@ -5,17 +5,17 @@ import 'package:gym_app/Widgets/style_container.dart';
 import 'package:gym_app/Widgets/style_googlefonts.dart';
 import 'package:provider/provider.dart';
 
-class SubExcercise extends StatelessWidget {
+class Subexercise extends StatelessWidget {
   final List<String> subcategories;
 
-  SubExcercise({
+  Subexercise({
     Key? key,
     required this.subcategories,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    ExcerciseData excdata = Provider.of<ExcerciseData>(context, listen: false);
+    exerciseData excdata = Provider.of<exerciseData>(context, listen: false);
     return DeffaultScaffold(
       body: Center(
         child: ListView(
@@ -23,7 +23,7 @@ class SubExcercise extends StatelessWidget {
           children: subcategories.map((e) {
             return StyleContainer(
               onPressed: () =>
-                  Navigator.pushNamed(context, "excerciseList", arguments: e),
+                  Navigator.pushNamed(context, "exerciseList", arguments: e),
               edgeInsets: EdgeInsets.all(20),
               padding: EdgeInsets.all(20),
               clip: 20,

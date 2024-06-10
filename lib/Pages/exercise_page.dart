@@ -8,14 +8,14 @@ import 'package:gym_app/Widgets/style_googlefonts.dart';
 import 'package:provider/provider.dart';
 
 class ExercisePage extends StatelessWidget {
-  Excercise excercise;
-  ExercisePage({Key? key, required this.excercise}) : super(key: key);
+  Exercise exercise;
+  ExercisePage({Key? key, required this.exercise}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    ExcerciseData excdata = Provider.of<ExcerciseData>(context, listen: false);
+    exerciseData excdata = Provider.of<exerciseData>(context, listen: false);
     return DeffaultScaffold(
-        name: excercise.name!.toUpperCase(),
+        name: exercise.name!.toUpperCase(),
         body: ListView(
           children: [
             StyleContainer(
@@ -27,14 +27,14 @@ class ExercisePage extends StatelessWidget {
                     clip: 10,
                     child: FadeInImage(
                       placeholder: AssetImage("assets/gif/loading.gif"),
-                      image: NetworkImage(excercise.gifUrl!),
+                      image: NetworkImage(exercise.gifUrl!),
                       fit: BoxFit.cover,
                     ),
                   ),
                   StyleContainer(
                       edgeInsets: EdgeInsets.only(top: 10),
                       child: StyleGoogleFonts(
-                        body: excercise.name!.toUpperCase(),
+                        body: exercise.name!.toUpperCase(),
                         white: true,
                         weight: FontWeight.w600,
                       ))
@@ -58,7 +58,7 @@ class ExercisePage extends StatelessWidget {
                         child: StyleGoogleFonts(
                       decoration: TextDecoration.underline,
                       body: excdata
-                          .traductValue(false, true, excercise.target!)
+                          .traductValue(false, true, exercise.target!)
                           .toUpperCase(),
                       white: true,
                     )),
@@ -69,7 +69,7 @@ class ExercisePage extends StatelessWidget {
                           white: true,
                           weight: FontWeight.w900,
                         )),
-                    ...excercise.secondaryMuscles!.map(
+                    ...exercise.secondaryMuscles!.map(
                       (e) {
                         return StyleContainer(
                             edgeInsets: EdgeInsets.all(5),
@@ -86,12 +86,12 @@ class ExercisePage extends StatelessWidget {
               clip: 10,
               edgeInsets: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
               child: Column(
-                  children: excercise.instructions!.map((e) {
+                  children: exercise.instructions!.map((e) {
                 return StyleContainer(
                     padding: EdgeInsets.all(5),
                     child: Column(
                       children: [
-                        excercise.instructions!.indexOf(e) != 0
+                        exercise.instructions!.indexOf(e) != 0
                             ? const Divider(
                                 color: Colors.white,
                               )

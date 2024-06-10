@@ -10,7 +10,7 @@ void main() async {
   await dotenv.load();
   runApp(
     ChangeNotifierProvider(
-      create: (context) => ExcerciseData(),
+      create: (context) => exerciseData(),
       child: MaterialApp(
         theme: myTheme,
         routes: getRoutes(),

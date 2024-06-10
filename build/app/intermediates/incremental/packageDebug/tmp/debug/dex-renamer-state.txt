@@ -1,4 +1,4 @@
-#Mon Jun 10 17:49:37 CEST 2024
+#Mon Jun 10 21:35:29 CEST 2024
 base.0=/home/diegogl/Documentos/Repos/GymExcercise/build/app/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/home/diegogl/Documentos/Repos/GymExcercise/build/app/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
 base.2=/home/diegogl/Documentos/Repos/GymExcercise/build/app/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex

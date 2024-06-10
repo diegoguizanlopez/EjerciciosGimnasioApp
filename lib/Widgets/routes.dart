@@ -10,17 +10,17 @@ Map<String, WidgetBuilder> getRoutes() {
     'lobby': (_) => const Lobby(),
     'subexercise': (context) {
       final args = ModalRoute.of(context)!.settings.arguments as List<Object?>;
-      return SubExcercise(
+      return Subexercise(
         subcategories: (args[0] as List<String>?) ?? [],
       );
     },
-    'excerciseList': (context) {
+    'exerciseList': (context) {
       final args = ModalRoute.of(context)!.settings.arguments as String;
-      return ExcerciseList(category: args);
+      return exerciseList(category: args);
     },
     'exercise': (context) {
-      final args = ModalRoute.of(context)!.settings.arguments as Excercise;
-      return ExercisePage(excercise: args);
+      final args = ModalRoute.of(context)!.settings.arguments as Exercise;
+      return ExercisePage(exercise: args);
     },
   };
 }

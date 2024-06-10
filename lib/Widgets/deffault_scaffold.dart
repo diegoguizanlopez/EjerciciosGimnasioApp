@@ -15,7 +15,7 @@ class _DeffaultScaffoldState extends State<DeffaultScaffold> {
     return Scaffold(
       extendBody: true,
       appBar: AppBar(
-        title: Text(widget.name??"Gym Excercise"),
+        title: Text(widget.name??"Gym exercise"),
       ),
       body: widget.body,
     );

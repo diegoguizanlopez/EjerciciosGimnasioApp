@@ -1,14 +1,14 @@
 // To parse this JSON data, do
 //
-//     final excercise = excerciseFromJson(jsonString);
+//     final Exercise = ExerciseFromJson(jsonString);
 
 import 'dart:convert';
 
-List<Excercise> excerciseFromJson(String str) => List<Excercise>.from(json.decode(str).map((x) => Excercise.fromJson(x)));
+List<Exercise> exerciseFromJson(String str) => List<Exercise>.from(json.decode(str).map((x) => Exercise.fromJson(x)));
 
-String excerciseToJson(List<Excercise> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String exerciseToJson(List<Exercise> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class Excercise {
+class Exercise {
   String? bodyPart;
   String? equipment;
   String? gifUrl;
@@ -18,7 +18,7 @@ class Excercise {
   List<String>? secondaryMuscles;
   List<String>? instructions;
 
-  Excercise({
+  Exercise({
     this.bodyPart,
     this.equipment,
     this.gifUrl,
@@ -29,7 +29,7 @@ class Excercise {
     this.instructions,
   });
 
-  Excercise copyWith({
+  Exercise copyWith({
     String? bodyPart,
     String? equipment,
     String? gifUrl,
@@ -39,7 +39,7 @@ class Excercise {
     List<String>? secondaryMuscles,
     List<String>? instructions,
   }) =>
-      Excercise(
+      Exercise(
         bodyPart: bodyPart ?? this.bodyPart,
         equipment: equipment ?? this.equipment,
         gifUrl: gifUrl ?? this.gifUrl,
@@ -50,7 +50,7 @@ class Excercise {
         instructions: instructions ?? this.instructions,
       );
 
-  factory Excercise.fromJson(Map<String, dynamic> json) => Excercise(
+  factory Exercise.fromJson(Map<String, dynamic> json) => Exercise(
     bodyPart: json["bodyPart"],
     equipment: json["equipment"],
     gifUrl: json["gifUrl"],
@@ -74,7 +74,7 @@ class Excercise {
 
   @override
   String toString() {
-    return 'Excercise{'
+    return 'Exercise{'
         'bodyPart: $bodyPart, '
         'equipment: $equipment, '
         'gifUrl: $gifUrl, '
